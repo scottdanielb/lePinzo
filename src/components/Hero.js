@@ -1,12 +1,41 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import heroBcg from '../assets/hero-bcg.jpeg'
-import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import heroBcg from '../assets/hero-inicio-1.jpeg';
+import heroBcg2 from '../assets/hero-inicio-2.jpeg';
 
 const Hero = () => {
-  return <h4>hero</h4>
-}
+  return (
+    <Wrapper className='section-center'>
+      <article className='content'>
+        <h1>
+          Get artsy <br />
+          but not so messy
+        </h1>
+        <p>
+          Proveemos todos los materiales necesarios para que puedas
+          tener tu momento <span>Picasso</span>. Lo eres y nosotros te
+          damos el primer empujon.
+        </p>
+        <Link to='/productos' className='btn hero-btn'>
+          Ver colleción
+        </Link>
+      </article>
+      <article className='img-container'>
+        <img
+          src={heroBcg}
+          alt='paint by number'
+          className='accent-img'
+        />
+        <img
+          src={heroBcg2}
+          alt='person painting'
+          className='main-img'
+        />
+      </article>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   min-height: 60vh;
@@ -23,6 +52,12 @@ const Wrapper = styled.section`
     color: var(--clr-grey-5);
     font-size: 1rem;
   }
+
+  span {
+    font-weight: bold;
+    font-style: italic;
+  }
+
   @media (min-width: 992px) {
     height: calc(100vh - 5rem);
     grid-template-columns: 1fr 1fr;
@@ -36,7 +71,9 @@ const Wrapper = styled.section`
     .hero-btn {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
+      margin-top: 1rem;
     }
+
     .img-container {
       display: block;
       position: relative;
@@ -53,21 +90,22 @@ const Wrapper = styled.section`
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 250px;
+      width: 300px;
       transform: translateX(-50%);
       border-radius: var(--radius);
+      z-index: 1;
     }
     .img-container::before {
       content: '';
       position: absolute;
       width: 10%;
       height: 80%;
-      background: var(--clr-primary-9);
+      /* background: var(--clr-primary-9); */
       bottom: 0%;
       left: -8%;
       border-radius: var(--radius);
     }
   }
-`
+`;
 
-export default Hero
+export default Hero;

@@ -30,6 +30,18 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
+  // GETTING PRODUCTS FROM API
+
+  const fetchProducts = async (url) => {
+    const res = await axios.get(url);
+    console.log(res);
+  };
+
+  useEffect(() => {
+    fetchProducts(url);
+  }, []);
+  // GETTING PRODUCTS FROM API
+
   return (
     <ProductsContext.Provider
       value={{ ...state, openSidebar, closeSidebar }}

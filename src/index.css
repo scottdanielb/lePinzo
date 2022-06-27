@@ -6,9 +6,9 @@ Variables
 
 :root {
   /* dark shades of primary color*/
-  --clr-primary-1: hsl(260, 28%, 21%);
+  --clr-primary-1: hsl(260, 28%, 18%);
   --clr-primary-2: hsl(260, 28%, 29%);
-  --clr-primary-3: hsl(260, 28%, 37%);
+  --clr-primary-3: hsl(260, 28%, 33%);
   --clr-primary-4: hsl(260, 28%, 45%);
   /* primary/main color */
   --clr-primary-5: hsl(260, 100%, 71%);
@@ -17,7 +17,7 @@ Variables
   --clr-primary-7: hsl(260, 71%, 78%);
   --clr-primary-8: hsl(260, 71%, 83%);
   --clr-primary-9: hsl(260, 71%, 87%);
-  --clr-primary-10: hsl(260, 71%, 90%);
+  --clr-primary-10: hsl(260, 71%, 93%);
   /* darkest grey - used for headings */
   --clr-grey-1: hsl(209, 61%, 16%);
   --clr-grey-2: hsl(211, 39%, 23%);
@@ -38,7 +38,7 @@ Variables
   --clr-black: #222;
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
-  --radius: 0.25rem;
+  --radius: 0.35rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;

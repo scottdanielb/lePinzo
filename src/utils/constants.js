@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  GiCompass,
-  GiDiamondHard,
-  GiStabbedNote,
-} from 'react-icons/gi';
+  IoRocketSharp,
+  IoEyeSharp,
+  IoDiamondSharp,
+} from 'react-icons/io5';
 export const links = [
   {
     id: 1,
@@ -25,20 +25,20 @@ export const links = [
 export const services = [
   {
     id: 1,
-    icon: <GiCompass />,
-    title: 'mission',
+    icon: <IoRocketSharp />,
+    title: 'Misión',
     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
   },
   {
     id: 2,
-    icon: <GiDiamondHard />,
-    title: 'vision',
+    icon: <IoEyeSharp />,
+    title: 'Visión',
     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
   },
   {
     id: 3,
-    icon: <GiStabbedNote />,
-    title: 'history',
+    icon: <IoDiamondSharp />,
+    title: 'Valores',
     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
   },
 ];

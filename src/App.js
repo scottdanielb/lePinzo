@@ -14,6 +14,7 @@ import {
   About,
   Products,
   PrivateRoute,
+  LogIn,
 } from './pages';
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Home />
+        </Route>
+        <Route exact path='/login'>
+          <LogIn />
         </Route>
         <Route exact path='/nosotros'>
           <About />
