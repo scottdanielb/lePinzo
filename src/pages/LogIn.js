@@ -1,22 +1,32 @@
 import React from 'react';
-import {
-  signInWithGooglePopup,
-  createUserDocumentFromAuth,
-} from '../utils/firebase';
+import styled from 'styled-components';
+
+
+import { PageHero } from '../components';
+import SignUpForm from '../components/SignUpForm';
+import SignInForm from '../components/SignInForm ';
 
 const LogIn = () => {
-  const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
-  };
+  
+
   return (
-    <div>
-      <h1>SignIn</h1>
-      <button onClick={logGoogleUser}>
-        Sign in with google Popup
-      </button>
-    </div>
+    <main>
+      <PageHero title='Login' />
+      <Wrapper className='page  section-center'>
+        <SignInForm />
+        <SignUpForm />
+      </Wrapper>
+    </main>
   );
 };
+
+const Wrapper = styled.section`
+  display: grid;
+  gap: 5rem;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
 
 export default LogIn;
