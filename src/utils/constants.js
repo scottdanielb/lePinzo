@@ -1,9 +1,12 @@
 import React from 'react';
-import {
-  IoRocketSharp,
-  IoEyeSharp,
-  IoDiamondSharp,
-} from 'react-icons/io5';
+import styled from 'styled-components';
+
+import { ReactComponent as Service1White } from '../assets/services-1-white-1.svg';
+import { ReactComponent as Service1 } from '../assets/services-1.svg';
+import { ReactComponent as Service2 } from '../assets/services-2.svg';
+import { ReactComponent as Service2White } from '../assets/services-2-white.svg';
+import { ReactComponent as Service3 } from '../assets/services-3.svg';
+
 export const links = [
   {
     id: 1,
@@ -17,7 +20,7 @@ export const links = [
   },
   {
     id: 3,
-    text: 'productos',
+    text: 'Colecciones',
     url: '/productos',
   },
 ];
@@ -25,21 +28,21 @@ export const links = [
 export const services = [
   {
     id: 1,
-    icon: <IoRocketSharp />,
-    title: 'Misión',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+    icon: <Service2 />,
+    title: 'Paso 1',
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. ',
   },
   {
     id: 2,
-    icon: <IoEyeSharp />,
-    title: 'Visión',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+    icon: <Service1 />,
+    title: 'Paso 2',
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. ',
   },
   {
     id: 3,
-    icon: <IoDiamondSharp />,
-    title: 'Valores',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+    icon: <Service3 />,
+    title: 'Paso 3',
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. ',
   },
 ];
 

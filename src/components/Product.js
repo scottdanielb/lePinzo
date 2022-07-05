@@ -1,17 +1,30 @@
-import React from 'react'
-import styled from 'styled-components'
-import { formatPrice } from '../utils/helpers'
-import { FaSearch } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import styled from 'styled-components';
+import { formatPrice } from '../utils/helpers';
+import { FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const Product = () => {
-  return <h4>product</h4>
-}
+const Product = ({ image, name, price, id }) => {
+  return (
+    <Wrapper>
+      <div className='container'>
+        <img src={image} alt={name} />
+        <Link to={`/productos/${id}`} className='link'>
+          <FaSearch />
+        </Link>
+        <footer>
+          <h5>{name}</h5>
+          <p>{formatPrice(price)} mxn</p>
+        </footer>
+      </div>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.article`
   .container {
     position: relative;
-    background: var(--clr-black);
+    /* background: var(--clr-black); */
     border-radius: var(--radius);
   }
   img {
@@ -30,14 +43,14 @@ const Wrapper = styled.article`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50%;
     transition: var(--transition);
     opacity: 0;
     cursor: pointer;
     svg {
-      font-size: 1.25rem;
+      font-size: 2rem;
       color: var(--clr-white);
     }
   }
@@ -63,5 +76,5 @@ const Wrapper = styled.article`
     color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
   }
-`
-export default Product
+`;
+export default Product;

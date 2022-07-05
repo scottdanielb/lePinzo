@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   FaShoppingCart,
   FaUserMinus,
@@ -8,10 +8,13 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useProductsContext } from '../context/products_context';
 import { useCartContext } from '../context/cart_context';
-import { useUserContext } from '../context/user_context';
+import { UserContext } from '../context/user_context';
+import { signOutUser } from '../utils/firebase';
 
 const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
+  const { currentUser } = useContext(UserContext);
+
   return (
     <Wrapper className='cart-btn-wrapper'>
       <Link to='/cart' className='cart-btn' onClick={closeSidebar}>
@@ -21,9 +24,15 @@ const CartButtons = () => {
           <span className='cart-value'>2</span>
         </span>
       </Link>
-      <Link to='/login' type='button' className='auth-btn'>
-        Login <FaUserPlus />
-      </Link>
+      {currentUser ? (
+        <span className='auth-btn' onClick={signOutUser}>
+          Logout <FaUserMinus />
+        </span>
+      ) : (
+        <Link to='/login' type='button' className='auth-btn'>
+          Login <FaUserPlus />
+        </Link>
+      )}
     </Wrapper>
   );
 };

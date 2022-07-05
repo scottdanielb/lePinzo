@@ -18,7 +18,7 @@ const Hero = () => {
           damos el primer empujon.
         </p>
         <Link to='/productos' className='btn hero-btn'>
-          Ver colleción
+          Ver colecciones
         </Link>
       </article>
       <article className='img-container'>

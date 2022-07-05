@@ -12,11 +12,9 @@ const Services = () => {
             Arte. Experiencias. Disfrute.
           </h3>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Enim, cumque. Placeat voluptatem debitis nostrum,
-            laudantium voluptatum blanditiis ratione, minima pariatur,
-            possimus deleniti neque ea esse sed atque aliquam
-            accusamus dicta.
+            En tan solo 3 sencillos pasos convierte una obra de arte.
+            Sabemos que te gusta ensuciarte, pero no tanto. Por eso
+            sigue estos sencillos pasos y tendras tu momento Picasso.
           </p>
         </article>
         <div className='services-center'>
@@ -42,7 +40,7 @@ const Wrapper = styled.section`
     color: var(--clr-primary-1);
   }
   padding: 5rem 0;
-
+  /* --clr-primary-7   10*/
   background: var(--clr-primary-10);
 
   .header h3 {
@@ -52,6 +50,7 @@ const Wrapper = styled.section`
     margin-bottom: 0;
     line-height: 1.8;
     color: var(--clr-primary-3);
+    font-size: 1.2rem;
   }
   .services-center {
     margin-top: 4rem;
@@ -60,25 +59,29 @@ const Wrapper = styled.section`
   }
   .service {
     background: var(--clr-primary-7);
+    /* --clr-primary-10 7*/
     text-align: center;
-    padding: 2.5rem 2rem;
+    padding: 3.5rem 2.5rem;
     border-radius: var(--radius);
     p {
       color: var(--clr-primary-2);
     }
   }
   span {
-    width: 4rem;
-    height: 4rem;
+    width: 11rem;
+    height: 9rem;
     display: grid;
     margin: 0 auto;
     place-items: center;
-    margin-bottom: 1rem;
-    border-radius: 50%;
+    margin-bottom: 2.5rem;
+    /* margin-top: -1.75rem; */
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     background: var(--clr-primary-10);
     color: var(--clr-primary-1);
     svg {
-      font-size: 2rem;
+      /* font-size: 2rem; */
     }
   }
   @media (min-width: 992px) {

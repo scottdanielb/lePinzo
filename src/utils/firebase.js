@@ -8,6 +8,8 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from 'firebase/auth';
 import {
   getFirestore,
@@ -88,3 +90,13 @@ export const signInAuthUserWithEmailAndPassword = async (
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+// SIGNING WITH EMAIL AND PASSWORD
+
+// SIGNING OUT
+export const signOutUser = async () => await signOut(auth);
+// SIGNING OUT
+
+//LISTENER
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
+//LISTENER
