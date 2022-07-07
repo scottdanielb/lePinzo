@@ -1,9 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const CartColumns = () => {
-  return <h4>cart columns</h4>
-}
+  return (
+    <Wrapper>
+      <div className='content'>
+        <h5>Articulo</h5>
+        <h5>Precio</h5>
+        <h5>Cantidad</h5>
+        <h5>Sub-total</h5>
+        <span></span>
+      </div>
+      <hr />
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   display: none;
@@ -16,7 +27,7 @@ const Wrapper = styled.div`
       column-gap: 1rem;
       h5 {
         color: var(--clr-grey-5);
-        font-weight: 400;
+        font-weight: bold;
       }
     }
 
@@ -29,6 +40,6 @@ const Wrapper = styled.div`
       margin-bottom: 3rem;
     }
   }
-`
+`;
 
-export default CartColumns
+export default CartColumns;

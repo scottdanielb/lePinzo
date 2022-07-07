@@ -61,7 +61,7 @@ const Stars = ({ stars, reviews }) => {
         </span>
         {/* end of star */}
       </div>
-      <p className='reviews'>Dificultad: {reviews}</p>
+      {/* <p className='reviews'>Dificultad: {reviews}</p> */}
     </Wrapper>
   );
 };

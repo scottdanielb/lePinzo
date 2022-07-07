@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../assets/logo.svg';
 import { Link } from 'react-router-dom';
 import { useProductsContext } from '../context/products_context';
@@ -6,10 +6,12 @@ import { FaTimes } from 'react-icons/fa';
 import { links } from '../utils/constants';
 import styled from 'styled-components';
 import CartButtons from './CartButtons';
-import { useUserContext } from '../context/user_context';
+import { UserContext } from '../context/user_context';
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
+  const { currentUser } = useContext(UserContext);
+
   return (
     <SidebarContainer>
       <aside
@@ -38,9 +40,11 @@ const Sidebar = () => {
             );
           })}
           <li>
-            <Link to='/checkout' onClick={closeSidebar}>
-              checkout
-            </Link>
+            {currentUser ? (
+              <Link to='/checkout' onClick={closeSidebar}>
+                checkout
+              </Link>
+            ) : null}
           </li>
         </ul>
         <CartButtons onClick={closeSidebar} />

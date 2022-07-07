@@ -14,6 +14,13 @@ import { signOutUser } from '../utils/firebase';
 const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
   const { currentUser } = useContext(UserContext);
+  const { total_items, clearCart } = useCartContext();
+
+  const wrapperFuntion = () => {
+    signOutUser();
+    closeSidebar();
+    clearCart();
+  };
 
   return (
     <Wrapper className='cart-btn-wrapper'>
@@ -21,15 +28,20 @@ const CartButtons = () => {
         Cart
         <span className='cart-container'>
           <FaShoppingCart />
-          <span className='cart-value'>2</span>
+          <span className='cart-value'>{total_items}</span>
         </span>
       </Link>
       {currentUser ? (
-        <span className='auth-btn' onClick={signOutUser}>
+        <button className='auth-btn' onClick={wrapperFuntion}>
           Logout <FaUserMinus />
-        </span>
+        </button>
       ) : (
-        <Link to='/login' type='button' className='auth-btn'>
+        <Link
+          to='/login'
+          type='button'
+          className='auth-btn'
+          onClick={closeSidebar}
+        >
           Login <FaUserPlus />
         </Link>
       )}

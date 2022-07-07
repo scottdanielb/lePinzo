@@ -36,6 +36,12 @@ const Nav = () => {
               </li>
             );
           })}
+          {currentUser ? (
+            <li>
+              {' '}
+              <Link to='/checkout'> Checkout</Link>{' '}
+            </li>
+          ) : null}
         </ul>
         <CartButtons />
       </div>
