@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -18,7 +19,8 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } =
     formFields;
-  const history = useHistory();
+  // const history = useHistory();
+  const navigate = useNavigate();
 
   const resetFormField = () => {
     setFormFields(defaultFormFields);
@@ -36,7 +38,7 @@ const SignUpForm = () => {
         email,
         password
       );
-      history.push('/', { update: true });
+      navigate('/', { update: true });
       await createUserDocumentFromAuth(user, { displayName });
       resetFormField();
     } catch (error) {

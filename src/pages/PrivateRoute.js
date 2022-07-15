@@ -1,18 +1,23 @@
 import React, { useContext } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import { UserContext } from '../context/user_context';
 
-const PrivateRoute = ({ children, ...rest }) => {
+// ...rest
+const PrivateRoute = ({ children }) => {
   const { currentUser } = useContext(UserContext);
 
-  return (
-    <Route
-      {...rest}
-      render={() => {
-        return currentUser ? children : <Redirect to='/'></Redirect>;
-      }}
-    ></Route>
-  );
+  // return (
+  //   <Route
+  //     {...rest}
+  //     render={() => {
+  //       return currentUser ? children : <Redirect to='/'></Redirect>;
+  //     }}
+  //   ></Route>
+  // );
+  if (!currentUser) {
+    return <Navigate to='/' />;
+  }
+  return children;
 };
 export default PrivateRoute;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
 } from 'react-router-dom';
 import { Navbar, Sidebar, Footer } from './components';
@@ -22,8 +22,8 @@ function App() {
     <Router>
       <Navbar />
       <Sidebar />
-      <Switch>
-        <Route exact path='/'>
+      <Routes>
+        {/* <Route exact path='/'>
           <Home />
         </Route>
         <Route exact path='/login'>
@@ -48,8 +48,23 @@ function App() {
         </PrivateRoute>
         <Route path='*'>
           <Error />
-        </Route>
-      </Switch>
+        </Route> */}
+        <Route path='/' element={<Home />} />
+        <Route path='login' element={<LogIn />} />
+        <Route path='nosotros' element={<About />} />
+        <Route path='cart' element={<Cart />} />
+        <Route path='productos' element={<Products />} />
+        <Route path='productos/:id' element={<SingleProduct />} />
+        <Route
+          path='checkout'
+          element={
+            <PrivateRoute>
+              <Checkout />
+            </PrivateRoute>
+          }
+        />
+        <Route path='*' element={<Error />} />
+      </Routes>
       <Footer />
     </Router>
   );

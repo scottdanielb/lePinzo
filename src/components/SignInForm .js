@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
@@ -17,11 +18,12 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-  const history = useHistory();
+  // const history = useHistory();
+  const navigate = useNavigate();
 
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
-    history.push('/');
+    navigate('/', { replace: true });
   };
 
   const handleSubmit = async (event) => {
@@ -32,7 +34,7 @@ const SignInForm = () => {
         email,
         password
       );
-      history.push('/');
+      navigate('/', { replace: true });
       // resetFormField();
     } catch (error) {
       if (

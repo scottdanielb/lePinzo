@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BsCircleFill, BsCircleHalf, BsCircle } from 'react-icons/bs';
-const Stars = ({ stars, reviews }) => {
+const Stars = ({ stars }) => {
   return (
     <Wrapper>
       <div className='stars'>
